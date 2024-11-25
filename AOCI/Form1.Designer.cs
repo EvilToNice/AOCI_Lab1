@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.DefaultImage = new Emgu.CV.UI.ImageBox();
             this.SelectImageBtn = new System.Windows.Forms.Button();
             this.ReImage = new Emgu.CV.UI.ImageBox();
@@ -41,12 +40,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CannyFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CannySecond)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // DefaultImage
             // 
@@ -76,7 +69,7 @@
             // 
             // ProcessBtn
             // 
-            this.ProcessBtn.Location = new System.Drawing.Point(665, 246);
+            this.ProcessBtn.Location = new System.Drawing.Point(663, 51);
             this.ProcessBtn.Name = "ProcessBtn";
             this.ProcessBtn.Size = new System.Drawing.Size(75, 23);
             this.ProcessBtn.TabIndex = 5;
@@ -87,20 +80,24 @@
             // CannyFirst
             // 
             this.CannyFirst.LargeChange = 1;
-            this.CannyFirst.Location = new System.Drawing.Point(663, 114);
+            this.CannyFirst.Location = new System.Drawing.Point(658, 214);
             this.CannyFirst.Maximum = 256;
             this.CannyFirst.Name = "CannyFirst";
-            this.CannyFirst.Size = new System.Drawing.Size(75, 45);
+            this.CannyFirst.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.CannyFirst.Size = new System.Drawing.Size(45, 256);
             this.CannyFirst.TabIndex = 6;
             // 
             // CannySecond
             // 
             this.CannySecond.LargeChange = 1;
-            this.CannySecond.Location = new System.Drawing.Point(663, 177);
+            this.CannySecond.Location = new System.Drawing.Point(693, 214);
             this.CannySecond.Maximum = 256;
             this.CannySecond.Name = "CannySecond";
-            this.CannySecond.Size = new System.Drawing.Size(75, 45);
+            this.CannySecond.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.CannySecond.Size = new System.Drawing.Size(45, 256);
+            this.CannySecond.SmallChange = 5;
             this.CannySecond.TabIndex = 7;
+            this.CannySecond.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             // 
             // Form1
             // 
@@ -126,8 +123,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ImageList imageList1;
         private Emgu.CV.UI.ImageBox DefaultImage;
         private System.Windows.Forms.Button SelectImageBtn;
         private Emgu.CV.UI.ImageBox ReImage;
