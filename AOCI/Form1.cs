@@ -97,5 +97,51 @@ namespace AOCI
                 MessageBox.Show(ex.Message);
             }
         }
+        private VideoCapture capture;
+        private void VideoBTN_Click(object sender, EventArgs e)
+        {
+
+
+            // инициализация веб-камеры
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            var result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK) // открытие выбранного файла
+            {
+                string fileName = openFileDialog.FileName;
+
+
+                capture = new VideoCapture(fileName);
+                capture.ImageGrabbed += ProcessFrame;
+                capture.Start(); // начало обработки видеопотока
+            }
+
+
+            //capture.Stop(); // остановка обработки видеопотока
+
+        }
+
+        // захват кадра из видеопотока
+        private void ProcessFrame(object sender, EventArgs e)
+        {
+            var frame = new Mat();
+            capture.Retrieve(frame); // получение текущего кадра
+
+            Image<Bgr, byte> image = frame.ToImage<Bgr, byte>();
+
+            Image<Gray, byte> grayImage = image.Convert<Gray, byte>();
+
+            var tempImage = grayImage.PyrDown();
+            var destImage = tempImage.PyrUp();
+
+            double cannyThreshold = 40.0;//CannyFirst.Value;
+            double cannyThresholdLinking = 10.0;// CannySecond.Value;
+
+            Image<Gray, byte> cannyEdges = destImage.Canny(cannyThreshold, cannyThresholdLinking);
+
+            //var cannyEdgesBgr = cannyEdges.Convert<Bgr, byte>();
+
+
+            ReImage.Image = cannyEdges.Resize(640, 480, Inter.Linear);//.Resize(640, 480, Inter.Linear)
+        }
     }
 }

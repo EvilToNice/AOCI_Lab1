@@ -35,6 +35,7 @@
             this.ProcessBtn = new System.Windows.Forms.Button();
             this.CannyFirst = new System.Windows.Forms.TrackBar();
             this.CannySecond = new System.Windows.Forms.TrackBar();
+            this.VideoBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CannyFirst)).BeginInit();
@@ -99,6 +100,16 @@
             this.CannySecond.TabIndex = 7;
             this.CannySecond.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             // 
+            // VideoBTN
+            // 
+            this.VideoBTN.Location = new System.Drawing.Point(663, 100);
+            this.VideoBTN.Name = "VideoBTN";
+            this.VideoBTN.Size = new System.Drawing.Size(75, 23);
+            this.VideoBTN.TabIndex = 5;
+            this.VideoBTN.Text = "Process";
+            this.VideoBTN.UseVisualStyleBackColor = true;
+            this.VideoBTN.Click += new System.EventHandler(this.VideoBTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +117,7 @@
             this.ClientSize = new System.Drawing.Size(1405, 514);
             this.Controls.Add(this.CannySecond);
             this.Controls.Add(this.CannyFirst);
+            this.Controls.Add(this.VideoBTN);
             this.Controls.Add(this.ProcessBtn);
             this.Controls.Add(this.ReImage);
             this.Controls.Add(this.SelectImageBtn);
@@ -129,6 +141,7 @@
         private System.Windows.Forms.Button ProcessBtn;
         private System.Windows.Forms.TrackBar CannyFirst;
         private System.Windows.Forms.TrackBar CannySecond;
+        private System.Windows.Forms.Button VideoBTN;
     }
 }
 
