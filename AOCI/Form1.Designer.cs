@@ -36,6 +36,14 @@
             this.CannyFirst = new System.Windows.Forms.TrackBar();
             this.CannySecond = new System.Windows.Forms.TrackBar();
             this.VideoBTN = new System.Windows.Forms.Button();
+            this.TimerVideo = new System.Windows.Forms.Timer(this.components);
+            this.txt50 = new System.Windows.Forms.TextBox();
+            this.txt100 = new System.Windows.Forms.TextBox();
+            this.txt200 = new System.Windows.Forms.TextBox();
+            this.txt150 = new System.Windows.Forms.TextBox();
+            this.txt255 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CannyFirst)).BeginInit();
@@ -62,7 +70,7 @@
             // 
             // ReImage
             // 
-            this.ReImage.Location = new System.Drawing.Point(744, 12);
+            this.ReImage.Location = new System.Drawing.Point(834, 12);
             this.ReImage.Name = "ReImage";
             this.ReImage.Size = new System.Drawing.Size(640, 480);
             this.ReImage.TabIndex = 4;
@@ -106,15 +114,92 @@
             this.VideoBTN.Name = "VideoBTN";
             this.VideoBTN.Size = new System.Drawing.Size(75, 23);
             this.VideoBTN.TabIndex = 5;
-            this.VideoBTN.Text = "Process";
+            this.VideoBTN.Text = "Video";
             this.VideoBTN.UseVisualStyleBackColor = true;
             this.VideoBTN.Click += new System.EventHandler(this.VideoBTN_Click);
+            // 
+            // TimerVideo
+            // 
+            this.TimerVideo.Interval = 33;
+            this.TimerVideo.Tick += new System.EventHandler(this.TimerVideo_Tick);
+            // 
+            // txt50
+            // 
+            this.txt50.AccessibleDescription = "255";
+            this.txt50.Location = new System.Drawing.Point(755, 15);
+            this.txt50.MaxLength = 3;
+            this.txt50.Name = "txt50";
+            this.txt50.Size = new System.Drawing.Size(63, 20);
+            this.txt50.TabIndex = 8;
+            // 
+            // txt100
+            // 
+            this.txt100.AccessibleDescription = "255";
+            this.txt100.Location = new System.Drawing.Point(755, 53);
+            this.txt100.MaxLength = 3;
+            this.txt100.Name = "txt100";
+            this.txt100.Size = new System.Drawing.Size(63, 20);
+            this.txt100.TabIndex = 9;
+            // 
+            // txt200
+            // 
+            this.txt200.AccessibleDescription = "255";
+            this.txt200.Location = new System.Drawing.Point(755, 140);
+            this.txt200.MaxLength = 3;
+            this.txt200.Name = "txt200";
+            this.txt200.Size = new System.Drawing.Size(63, 20);
+            this.txt200.TabIndex = 11;
+            // 
+            // txt150
+            // 
+            this.txt150.AccessibleDescription = "255";
+            this.txt150.Location = new System.Drawing.Point(755, 102);
+            this.txt150.MaxLength = 3;
+            this.txt150.Name = "txt150";
+            this.txt150.Size = new System.Drawing.Size(63, 20);
+            this.txt150.TabIndex = 10;
+            // 
+            // txt255
+            // 
+            this.txt255.AccessibleDescription = "255";
+            this.txt255.Location = new System.Drawing.Point(755, 175);
+            this.txt255.MaxLength = 3;
+            this.txt255.Name = "txt255";
+            this.txt255.Size = new System.Drawing.Size(63, 20);
+            this.txt255.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(655, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "cannyThreshold";
+            this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label1_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(690, 549);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "cannyThresholdLinking";
+            this.label2.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 514);
+            this.ClientSize = new System.Drawing.Size(1515, 609);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt255);
+            this.Controls.Add(this.txt200);
+            this.Controls.Add(this.txt150);
+            this.Controls.Add(this.txt100);
+            this.Controls.Add(this.txt50);
             this.Controls.Add(this.CannySecond);
             this.Controls.Add(this.CannyFirst);
             this.Controls.Add(this.VideoBTN);
@@ -142,6 +227,14 @@
         private System.Windows.Forms.TrackBar CannyFirst;
         private System.Windows.Forms.TrackBar CannySecond;
         private System.Windows.Forms.Button VideoBTN;
+        private System.Windows.Forms.Timer TimerVideo;
+        private System.Windows.Forms.TextBox txt50;
+        private System.Windows.Forms.TextBox txt100;
+        private System.Windows.Forms.TextBox txt200;
+        private System.Windows.Forms.TextBox txt150;
+        private System.Windows.Forms.TextBox txt255;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
